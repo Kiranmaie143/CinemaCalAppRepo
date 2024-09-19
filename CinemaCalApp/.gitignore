@@ -1,0 +1,83 @@
+# Node modules
+/node_modules
+/npm-debug.log*
+/yarn-debug.log*
+/yarn-error.log*
+
+# Vite build output
+/dist
+/.vite
+.vite/*
+
+# Logs
+*.log
+logs/
+*.log.*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Production
+/build
+/public/build
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+*.swp
+.sass-cache/
+*.pid
+*.seed
+*.pid.lock
+
+# IDE files
+/.idea/
+/.vscode/
+*.iml
+
+# .NET Core specific files
+bin/
+obj/
+/.vs/
+/*.db
+/*.user
+/*.suo
+/*.log
+/*.sql
+/*.sqlite
+/Migrations
+/secrets.json
+
+# ASP.NET HTTPS development certificates
+*.pfx
+*.p12
+
+# Publish artifacts
+/app.publish
+
+# Rider projects
+.idea/
+/*.sln.iml
+/.Rider*
+
+# Environment Variables
+.env
+.env.local
+.env.*.local
+
+# Coverage directory used by tools like istanbul or c8
+coverage/
+*.lcov
+
+# Build artifacts
+/dist/
+*.dll
+*.exe
+
+# ASP.NET User secrets
+secrets.json
+
+# Misc
+.vscode/
+*.code-workspace
+*.sln
