@@ -52,7 +52,14 @@ const ExpenseList = () => {
             ) : (
                 <>
                     {expenses.length > 0 ? (
-                        <div className="expense-items">
+                            <div className="expense-items">
+                                <div className="expense-header">
+                                    <div>Expense Name</div>
+                                    <div>Price</div>
+                                    <div>Markup %</div>
+                                    <div>Total Price</div>
+                                    <div>Action</div>
+                                </div>
                             {expenses.map(expense => (
                                 <div key={expense.id} className="expense-item">
                                     <input type="text" value={expense.name} readOnly />

@@ -11,16 +11,6 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-    font-weight: 500;
-    color: #646cff;
-    text-decoration: inherit;
-}
-
-    a:hover {
-        color: #535bf2;
-    }
-
 body {
     margin: 0;
     display: flex;
@@ -30,37 +20,6 @@ body {
     min-height: 100vh;
     background-color: #242424;
 }
-
-h1 {
-    font-size: 3.2em;
-    line-height: 1.1;
-    color: #fff;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-button {
-    border-radius: 8px;
-    border: 1px solid transparent;
-    padding: 0.6em 1.2em;
-    font-size: 1em;
-    font-weight: 500;
-    font-family: inherit;
-    background-color: #1a1a1a;
-    color: #fff;
-    cursor: pointer;
-    transition: all 0.25s ease;
-}
-
-    button:hover {
-        background-color: #646cff;
-        border-color: #646cff;
-    }
-
-    button:focus,
-    button:focus-visible {
-        outline: 4px auto -webkit-focus-ring-color;
-    }
 
 @media (prefers-color-scheme: light) {
     :root {
@@ -78,6 +37,8 @@ button {
     }
 }
 
+
+/* Container for the expense list */
 .expense-list {
     max-width: 800px;
     margin: 0 auto;
@@ -87,33 +48,50 @@ button {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.expense-item {
-    display: flex;
-    justify-content: space-between;
+/* Styles for the header and list items */
+.expense-header, .expense-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 50px; /* Four equal columns and one for the delete button */
     align-items: center;
     padding: 10px;
     border: 1px solid #ddd;
-    border-radius: 8px;
     margin-bottom: 10px;
-    background: #f9f9f9;
 }
 
-    .expense-item input {
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        padding: 5px;
-        margin-right: 10px;
-        flex: 1;
-    }
+.expense-header {
+    font-weight: bold;
+    background-color: #ddd;
+    text-align: left;
+}
 
-    .expense-item button {
-        margin-left: 10px;
-    }
+.expense-item input {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 5px;
+    margin-right: 10px;
+    width: 100%; /* Ensures the input fields fill the grid cell */
+}
 
+.expense-item button {
+    margin-left: 10px;
+    width: 100%; /* Ensures button fills the last grid cell */
+}
+
+/* Styles for the delete button */
+.delete-button {
+    background: none;
+    border: none;
+    color: #e74c3c; /* Red color for delete icon */
+    cursor: pointer;
+    font-size: 1.2em; /* Adjust size as needed */
+    transition: color 0.3s;
+}
+
+/* Responsive adjustment for smaller screens */
 @media (max-width: 768px) {
-    .expense-item {
-        flex-direction: column;
-        align-items: flex-start;
+    .expense-header, .expense-item {
+        grid-template-columns: 1fr; /* Stack columns on top of each other */
+        text-align: left;
     }
 
         .expense-item input {
@@ -125,18 +103,32 @@ button {
             margin-top: 10px;
         }
 
+        .expense-header div {
+            margin-bottom: 5px;
+        }
 }
-.delete-button {
-    background: none;
-    border: none;
-    color: #e74c3c; /* Red color for delete icon */
+button {
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.2em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #272bc8;
+    color: #fff;
     cursor: pointer;
-    font-size: 1.2em; /* Adjust size as needed */
-    transition: color 0.3s;
+    transition: background-color 0.25s, border-color 0.25s, transform 0.2s;
+    outline: none; /* Removes default focus outline */
 }
 
+    /* Button Hover State */
+    button:hover {
+        background-color: #646cff;
+        border-color: #646cff;
+    }
 
-.total-sum {
-    margin-top: 20px;
-    font-size: 1.2em;
-}
+    /* Button Focus State */
+    button:focus,
+    button:focus-visible {
+        outline: 4px auto -webkit-focus-ring-color;
+    }
